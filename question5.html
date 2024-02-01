@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript basic animation</title>
+    <script type="text/javascript">
+      function wordRotation(id) {
+        //lets check the element using dom in tag
+        let element = document.querySelector(".target");
+        console.log(element);
+        //finding the text
+        let textNode = element.childNodes[0];
+        console.log(textNode);
+        //convert into data form
+        let text = textNode.data;
+        console.log(text);
+
+        setInterval(function () {
+          //   text = text[text.length - 1] + text.substring(0, text.length - 1);
+          text = text.slice(-1).concat(text.slice(0, -1));
+          textNode.data = text;
+        }, 1000);
+      }
+    </script>
+  </head>
+  <body onload="wordRotation('target')">
+    <p class="target">w3resource</p>
+  </body>
+</html>

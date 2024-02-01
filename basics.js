@@ -1,3 +1,5 @@
+/*
+
 //1. Write a JavaScript program to display the current day
 //and time in the following format.
 //Sample Output : Today is : Tuesday.
@@ -46,3 +48,58 @@ console.log(`${mm}-${dd}-${yyyy}`);
 console.log(`${mm}/${dd}/${yyyy}`);
 console.log(`${dd}-${mm}-${yyyy}`);
 console.log(`${dd}/${mm}/${yyyy}`);
+
+//4. Write a JavaScript program to find the area of a triangle where three sides are 5, 6, 7.
+const triangleArea = function (a, b, c) {
+  // Convert degrees to radians
+  let cRadians = (c * Math.PI) / 180;
+
+  // Calculate sin of the angle in radians
+  let k = Math.sin(cRadians);
+
+  let area = 0.5 * (a * b * k);
+
+  return area;
+};
+console.log(triangleArea(5, 6, 7));
+
+const triangleAreaBySecondFormula = function (a, b, c) {
+  let s = (a + b + c) / 2;
+  let area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+  return area;
+};
+console.log(triangleAreaBySecondFormula(5, 6, 7));
+
+
+//5. Write a JavaScript program to rotate the string 'w3resource'
+//in the right direction.
+//This is done by periodically removing one letter from the
+// string end and attaching it to the front.
+
+const rotateInRight = function (word) {
+  console.log(`This is Orginal Word ${word}`);
+  const rotation = word.slice(-1).concat(word.slice(0, -1));
+  return rotation;
+};
+
+console.log(rotateInRight("w3resources"));
+
+*/
+
+//6
+// Write a JavaScript program to determine whether a given year is a leap year in the Gregorian calendar.
+//logic is to divide it by 4 if not century year if centuary yr divide it by 400
+
+// const givenYear = window.prompt("Tell the year to find the leap year");
+const givenYear = 2400;
+console.log(typeof givenYear);
+
+if (givenYear % 4 !== 0) {
+  console.log(`Number is not leap year`);
+} else if (givenYear % 4 === 0) {
+  if (String(givenYear).slice(-2) === "00" && givenYear % 400 !== 0) {
+    console.log(`number is not a leap year`);
+  } else {
+    console.log(`Number is leap year`);
+  }
+}

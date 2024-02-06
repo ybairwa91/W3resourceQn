@@ -192,35 +192,52 @@ let one_day = 1000 * 60 * 60 * 24;
 let daysLeft = Math.ceil((christmas.getTime() - today.getTime()) / one_day);
 console.log(`Hence ${daysLeft} Days left for the christmas eve`);
 
-*/
 
 // 10. Write a JavaScript program to calculate multiplication and division of two numbers (input from the user).
-// sample form
+
 //selection
 const firstInput = document.getElementById("first");
 const secpndInput = document.getElementById("second");
 const multiplyBtn = document.getElementById("multiply");
 const divideBtn = document.getElementById("divide");
 let result = document.getElementById("result");
-console.log(result);
 const resultLi = document.getElementById("resultLi");
-console.log(resultLi);
-//fetch data
-multiplyBtn.addEventListener("click", function (e) {
+
+//handling functions
+function handleMultiply(e) {
   e.preventDefault();
   const firstInputValue = +firstInput.value;
-  console.log(firstInputValue);
   const secondInputValue = +secpndInput.value;
-  console.log(secondInputValue);
   let multiply = firstInputValue * secondInputValue;
   result.textContent = multiply;
-});
-divideBtn.addEventListener("click", function (e) {
+}
+function handleDivision(e) {
   e.preventDefault();
   const firstInputValue = +firstInput.value;
-  console.log(firstInputValue);
   const secondInputValue = +secpndInput.value;
-  console.log(secondInputValue);
   let divide = firstInputValue / secondInputValue;
-  result.textContent = divide;
-});
+  result.textContent = divide.toFixed(2);
+}
+//Events on buttons
+multiplyBtn.addEventListener("click", handleMultiply);
+divideBtn.addEventListener("click", handleDivision);
+
+*/
+
+//Q.11 11. Write a JavaScript program to convert temperatures to and from Celsius, Fahrenheit.
+// [ Formula : c/5 = (f-32)/9 [ where c = temperature in Celsius and f = temperature in Fahrenheit ]
+// Expected Output :
+// 60°C is 140 °F
+// 45°F is 7.222222222222222°C
+
+function conversionToFaherenheit(temp) {
+  let fahrenheit = (temp * 9) / 5 + 32;
+  console.log(`${temp}\xB0FC is ${fahrenheit}\xB0FF`);
+}
+conversionToFaherenheit(60);
+
+function conversionToCelsius(temp) {
+  let celsius = ((temp - 32) / 9) * 5;
+  console.log(`${temp}\xB0FF is ${celsius}\xB0FC`);
+}
+conversionToCelsius(45);

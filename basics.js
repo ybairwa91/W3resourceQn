@@ -84,7 +84,6 @@ const rotateInRight = function (word) {
 
 console.log(rotateInRight("w3resources"));
 
-*/
 
 //6
 // Write a JavaScript program to determine whether a given year is a leap year in the Gregorian calendar.
@@ -103,3 +102,93 @@ if (givenYear % 4 !== 0) {
     console.log(`Number is leap year`);
   }
 }
+
+//lets create a function
+function leapYear(year) {
+  return year % 100 === 0 ? year % 400 === 0 : year % 4 === 0;
+}
+console.log(leapYear(2016));
+console.log(leapYear(2100));
+
+//7
+//Write a JavaScript program to find out if 1st January will be a Sunday between
+// 2014 and 2050.
+
+const newDate = new Date();
+// console.log(newDate);
+// console.log(new Date("2020-01-01"));
+const weekdays = [
+  "sunday",
+  "monday",
+  "tuesday",
+  "weednesday",
+  "thursday",
+  "friday",
+  "saturday",
+];
+console.log(weekdays[newDate.getDay()]);
+
+for (i = 2014; i < 2050; i++) {
+  // console.log();
+  if (new Date(i, 0, 1).getDay() === 0) {
+    console.log(new Date(i, 0, 1));
+  }
+}
+
+
+//8 Write a JavaScript program where the program takes a random integer between 1
+//and 10,and the user is then prompted to input a guess number. The program displays
+//a message "Good Work" if the input matches the guess number otherwise "Not matched".
+
+const randomNum = Math.trunc(Math.random() * 10) ;
+console.log(randomNum);
+const askNumber = prompt("enter the number Between 1 to 10 to guess ");
+
+if (Number(askNumber) === randomNum) {
+  console.log("Good Work");
+} else {
+  console.log("Not matched");
+}
+
+*/
+
+//9.Write a JavaScript program to calculate the days left before Christmas.((nahi hua sala))
+
+const day = new Date();
+console.log(day.getTime());
+console.log(day.getMonth());
+
+day.getDate();
+
+const christmasDay = new Date(2024, 11, 25);
+console.log(christmasDay.getTime());
+console.log(christmasDay.getMonth());
+christmasDay.getDate();
+christmasDay.getMonth();
+
+///////////
+const timeStamp = christmasDay.getTime() - day.getTime();
+console.log(timeStamp);
+
+const date = new Date(timeStamp);
+console.log(date);
+console.log(date.getDate());
+
+//////////solution
+////////Get current date
+let today = new Date();
+console.log(today);
+//create a date object fro christmas of the current year
+let christmas = new Date(today.getFullYear(), 11, 25);
+console.log(christmas);
+//check if current date is after 25 Dec or not
+if (today.getMonth() == 11 && today.getDate > 25) {
+  //if true ,set christmas for the next year
+  // christmas = new Date(+today.getFullYear() + 1, 11, 25);
+  christmas.setFullYear(christmas.getFullYear() + 1);
+}
+
+//calculate the difference in days between today and christmas
+let one_day = 1000 * 60 * 60 * 24;
+let daysLeft = Math.ceil((christmas.getTime() - today.getTime()) / one_day);
+console.log(`Hence ${daysLeft} Days left for the christmas eve`);

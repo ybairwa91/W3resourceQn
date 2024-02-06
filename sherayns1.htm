@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shreyans</title>
+  </head>
+  <body>
+    <h1>
+      Q.1==>Create a html page with a button.When the button is clicked,change
+      the text of the element
+    </h1>
+    <button id="button">Click Here to change Content</button>
+    <!--  -->
+    <script>
+      const element = document.getElementById("button");
+      console.log(element.textContent);
+      element.addEventListener("click", function () {
+        element.textContent = "this is changed text by using DOM";
+      });
+    </script>
+  </body>
+</html>

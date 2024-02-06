@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shreyans</title>
+    <style>
+      img {
+        height: 600px;
+        display: flex
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      Q.2..Create a pages with two images and button.when the button is
+      clicked,swap the source attribute of the images
+    </h1>
+    <button id="btn">Swap Attributes</button>
+    <img id="imageOne" src="image1.avif" alt="imageOne" />
+    <img
+      id="imageTwo"
+      src="photo-1699592854133-25c24959d60f.avif"
+      alt="imageTwo"
+    />
+    <script>
+      let temp;
+      const imageOne = document.getElementById("imageOne");
+      //   console.log(imageOne.alt);
+      let imageOneAtt = imageOne.alt;
+      const imageTwo = document.getElementById("imageTwo");
+      //   console.log(imageTwo.alt);
+      let imageTwoAtt = imageTwo.alt;
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", function () {
+        temp = imageOneAtt;
+        imageOneAtt = imageTwoAtt;
+        imageTwoAtt = temp;
+      });
+    </script>
+  </body>
+</html>

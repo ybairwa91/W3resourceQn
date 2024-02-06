@@ -150,7 +150,6 @@ if (Number(askNumber) === randomNum) {
   console.log("Not matched");
 }
 
-*/
 
 //9.Write a JavaScript program to calculate the days left before Christmas.((nahi hua sala))
 
@@ -192,3 +191,36 @@ if (today.getMonth() == 11 && today.getDate > 25) {
 let one_day = 1000 * 60 * 60 * 24;
 let daysLeft = Math.ceil((christmas.getTime() - today.getTime()) / one_day);
 console.log(`Hence ${daysLeft} Days left for the christmas eve`);
+
+*/
+
+// 10. Write a JavaScript program to calculate multiplication and division of two numbers (input from the user).
+// sample form
+//selection
+const firstInput = document.getElementById("first");
+const secpndInput = document.getElementById("second");
+const multiplyBtn = document.getElementById("multiply");
+const divideBtn = document.getElementById("divide");
+let result = document.getElementById("result");
+console.log(result);
+const resultLi = document.getElementById("resultLi");
+console.log(resultLi);
+//fetch data
+multiplyBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  const firstInputValue = +firstInput.value;
+  console.log(firstInputValue);
+  const secondInputValue = +secpndInput.value;
+  console.log(secondInputValue);
+  let multiply = firstInputValue * secondInputValue;
+  result.textContent = multiply;
+});
+divideBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  const firstInputValue = +firstInput.value;
+  console.log(firstInputValue);
+  const secondInputValue = +secpndInput.value;
+  console.log(secondInputValue);
+  let divide = firstInputValue / secondInputValue;
+  result.textContent = divide;
+});

@@ -222,7 +222,6 @@ function handleDivision(e) {
 multiplyBtn.addEventListener("click", handleMultiply);
 divideBtn.addEventListener("click", handleDivision);
 
-*/
 
 //Q.11 11. Write a JavaScript program to convert temperatures to and from Celsius, Fahrenheit.
 // [ Formula : c/5 = (f-32)/9 [ where c = temperature in Celsius and f = temperature in Fahrenheit ]
@@ -241,3 +240,128 @@ function conversionToCelsius(temp) {
   console.log(`${temp}\xB0FF is ${celsius}\xB0FC`);
 }
 conversionToCelsius(45);
+
+
+
+// 12. Write a JavaScript program to get the website URL (loading page)
+console.log(window.location.href);
+// alert(document.URL);
+console.log(document.URL);
+
+
+//13. Write a JavaScript exercise to create a variable using a user-defined name.
+///game of dot notation and [] bracket in js object
+//in [ ] access method of js obejct we can assign even expression while
+// we cant do same in dot notation
+let var_name = "abcd";
+let n = 120;
+this[var_name] = n;
+console.log(this);
+this.name = "Yogesh";
+console.log(this[var_name]);
+console.log(this.name);
+// this[var_name] = n;
+// this.varname = n;
+// console.log(this[varname]);
+
+
+//14. Write a JavaScript exercise to get the filename extension.
+
+// let filename = prompt("enter the file name");
+let filename = "file.php";
+console.log(filename);
+const splitArr = filename.split(".");
+// console.log(`${splitArr[splitArr.length - 1]} is file extension`);
+//pop() take out the last element of the array
+console.log(`${splitArr.pop()} is the file extension`);
+
+// 15. Write a JavaScript program to get the difference between a given number and 13,
+// if the number is broader than 13 return double the absolute difference.
+
+function difference(num) {
+  return num > 13 ? Math.abs(2 * (num - 13)) : 13 - num;
+}
+
+console.log(difference(7));
+
+// 16. Write a JavaScript program to compute the sum of the two given integers.
+// If the two values are the same, then return triple their sum.
+
+function sum(a, b) {
+  return a == b ? 3 * (a + b) : a + b;
+}
+console.log(sum(10, 10));
+
+
+// 17. Write a JavaScript program to compute the absolute difference between a specified number
+// and 19. Returns triple the absolute difference if the specified number is greater than 19.
+// Click me to see the solution
+
+function difference(val) {
+  return val > 19 ? 3 * (val - 19) : 19 - val;
+}
+
+console.log(difference(22));
+
+
+// 18. Write a JavaScript program to check a pair of numbers and return true if one of the numbers
+// is 50 or if their sum is 50.
+
+// function findPair(one, two) {
+  //   if (!Number.isFinite(one)) return;
+  //   if (!Number.isFinite(two)) return;
+  //   let sum = one + two;
+  //   if (sum === 50) {
+    //     return true;
+//   }
+//   if (one === 50 || two === 50) {
+//     return true;
+//   }
+// }
+
+function test50(x, y) {
+  return x == 50 || y == 50 || x + y == 50;
+}
+console.log(test50(20, 20));
+console.log(test50(30, 20));
+console.log(test50(50, 20));
+
+
+// 19. Write a JavaScript program to check whether a given integer is within 20 of 100 or 400.
+// function range(val) {
+//   return 200 - val < 20 || 400 - val < 20
+//     ? `${val} is in range`
+//     : "it out of range";
+// }
+function range(val) {
+  return 200 - val < 20 || 400 - val < 20;
+}
+console.log(range(19));
+console.log(range(209));
+console.log(range(409));
+console.log(range(-409));
+
+
+// 20. Write a JavaScript program to check two given integers whether one is positive and
+// another one is negative.
+function check(x, y) {
+  return (x > 0 && y < 0) || (x < 0 && y > 0);
+}
+console.log(check(1,2));
+console.log(check(1,-2));
+console.log(check(-2,-2));
+*/
+// 21. Write a JavaScript program to create another string by adding "Py"
+// in front of a given string. If the given string begins with "Py" return the original string.
+
+function addPy(str) {
+  //you can concat by "py"+str
+  //alternative of slice is substring(0,2)
+  //alternative of startsWith
+  // return str.split("", 2).join("") === "Py" ? str : "py" + str;
+  return str.slice(0, 2) === "Py" ? str : "Py".concat(str);
+  // return str.substring(0, 2) === "Py" ? str : "Py".concat(str);
+  // return str.startsWith("Py") ? str : "Py".concat(str);
+}
+
+console.log(addPy("pertho"));

@@ -350,7 +350,6 @@ function check(x, y) {
 console.log(check(1,2));
 console.log(check(1,-2));
 console.log(check(-2,-2));
-*/
 // 21. Write a JavaScript program to create another string by adding "Py"
 // in front of a given string. If the given string begins with "Py" return the original string.
 
@@ -365,3 +364,43 @@ function addPy(str) {
 }
 
 console.log(addPy("pertho"));
+
+*/
+
+// 22. Write a JavaScript program to remove a character at the specified position in a
+//given string and return the modified string.
+//slice(include,exclude)
+//replace method=replace(toreplace,with)
+function removelett(str, pos) {
+  let newWordStart = str.slice(0, pos - 1);
+  let newWordEnd = str.slice(pos, pos.length);
+  const final = newWordStart.concat(newWordEnd);
+  const final2 = str.replace(str[pos - 1], "");
+  const final3 = str.slice(0, pos - 1) + str.slice(pos, pos.length);
+  const final4 = str.substring(0, pos - 1) + str.substring(pos, pos.length);
+  console.log(final);
+  console.log(final2);
+  console.log(final3);
+  console.log(final4);
+}
+removelett("Hello", 2);
+removelett("browser", 4);
+
+//
+// 23. Write a JavaScript program to create a new string
+// from a given string by changing the position of the first and last characters.
+// The string length must be broader than or equal to 1.
+
+function replace(str) {
+  if (str.length < 2) {
+    console.log(`${str}`);
+    return "";
+  }
+  // console.log(str.slice(1, -1));
+  // console.log(str.slice(str.length-1));
+  console.log(str.slice(str.length - 1) + str.slice(1, -1) + str.slice(0, 1));
+  console.log(str.substring(str.length - 1) + str.slice(1, -1) + str[0]);
+}
+replace("a");
+replace("ab");
+replace("abc");

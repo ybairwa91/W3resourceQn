@@ -1,5 +1,5 @@
 /*
-
+CATEGORY-MATH(DATE) OBEJCT
 //1. Write a JavaScript program to display the current day
 //and time in the following format.
 //Sample Output : Today is : Tuesday.
@@ -26,11 +26,13 @@ const seconds = date.getSeconds().toString().padStart(2, 0);
 const time = `${hours12} ${hours > 12 ? "PM" : "AM"}:${minutes}:${seconds}`;
 console.log("Current Time is :", time);
 
+CATEGORY-DOM
 //2. Write a JavaScript program to print the current window contents.
 // window.print();
 const btn = document.getElementById("print");
 btn.addEventListener("click", () => window.print());
 
+CATEGORY-MATH(DATE) OBEJCT
 //3.Write a JavaScript program to get the current date.
 //Expected Output :
 //mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy
@@ -49,6 +51,7 @@ console.log(`${mm}/${dd}/${yyyy}`);
 console.log(`${dd}-${mm}-${yyyy}`);
 console.log(`${dd}/${mm}/${yyyy}`);
 
+CATEGORY-FUNCTION
 //4. Write a JavaScript program to find the area of a triangle where three sides are 5, 6, 7.
 const triangleArea = function (a, b, c) {
   // Convert degrees to radians
@@ -71,6 +74,7 @@ const triangleAreaBySecondFormula = function (a, b, c) {
 console.log(triangleAreaBySecondFormula(5, 6, 7));
 
 
+CATEGORY-STRING
 //5. Write a JavaScript program to rotate the string 'w3resource'
 //in the right direction.
 //This is done by periodically removing one letter from the
@@ -85,6 +89,8 @@ const rotateInRight = function (word) {
 console.log(rotateInRight("w3resources"));
 
 
+
+CATEGORY-MATH(DATE) OBEJCT
 //6
 // Write a JavaScript program to determine whether a given year is a leap year in the Gregorian calendar.
 //logic is to divide it by 4 if not century year if centuary yr divide it by 400
@@ -110,6 +116,8 @@ function leapYear(year) {
 console.log(leapYear(2016));
 console.log(leapYear(2100));
 
+
+CATEGORY-MATH(DATE) OBJECT
 //7
 //Write a JavaScript program to find out if 1st January will be a Sunday between
 // 2014 and 2050.
@@ -136,6 +144,7 @@ for (i = 2014; i < 2050; i++) {
 }
 
 
+CATEGORY-CONTROL STATEMENTS
 //8 Write a JavaScript program where the program takes a random integer between 1
 //and 10,and the user is then prompted to input a guess number. The program displays
 //a message "Good Work" if the input matches the guess number otherwise "Not matched".
@@ -151,6 +160,8 @@ if (Number(askNumber) === randomNum) {
 }
 
 
+
+CATEGORY-MATH(DATE) OBEJCT
 //9.Write a JavaScript program to calculate the days left before Christmas.((nahi hua sala))
 
 const day = new Date();
@@ -193,8 +204,8 @@ let daysLeft = Math.ceil((christmas.getTime() - today.getTime()) / one_day);
 console.log(`Hence ${daysLeft} Days left for the christmas eve`);
 
 
+CATEGORY-DOM AND OPERATOR
 // 10. Write a JavaScript program to calculate multiplication and division of two numbers (input from the user).
-
 //selection
 const firstInput = document.getElementById("first");
 const secpndInput = document.getElementById("second");
@@ -223,6 +234,7 @@ multiplyBtn.addEventListener("click", handleMultiply);
 divideBtn.addEventListener("click", handleDivision);
 
 
+CATEGORY-FUNCTION AND OPERATOR
 //Q.11 11. Write a JavaScript program to convert temperatures to and from Celsius, Fahrenheit.
 // [ Formula : c/5 = (f-32)/9 [ where c = temperature in Celsius and f = temperature in Fahrenheit ]
 // Expected Output :
@@ -242,13 +254,14 @@ function conversionToCelsius(temp) {
 conversionToCelsius(45);
 
 
-
+CATEGORY-DOM
 // 12. Write a JavaScript program to get the website URL (loading page)
 console.log(window.location.href);
 // alert(document.URL);
 console.log(document.URL);
 
 
+//CATEGORY-ARRAY
 //13. Write a JavaScript exercise to create a variable using a user-defined name.
 ///game of dot notation and [] bracket in js object
 //in [ ] access method of js obejct we can assign even expression while
@@ -265,6 +278,8 @@ console.log(this.name);
 // console.log(this[varname]);
 
 
+
+//CATEGORY-STRING
 //14. Write a JavaScript exercise to get the filename extension.
 
 // let filename = prompt("enter the file name");
@@ -284,6 +299,7 @@ function difference(num) {
 
 console.log(difference(7));
 
+//CATEGORY-CONTROL STATEMENTS
 // 16. Write a JavaScript program to compute the sum of the two given integers.
 // If the two values are the same, then return triple their sum.
 
@@ -292,7 +308,7 @@ function sum(a, b) {
 }
 console.log(sum(10, 10));
 
-
+//CATEGORY-CONTROL STATEMENTS
 // 17. Write a JavaScript program to compute the absolute difference between a specified number
 // and 19. Returns triple the absolute difference if the specified number is greater than 19.
 // Click me to see the solution
@@ -303,7 +319,7 @@ function difference(val) {
 
 console.log(difference(22));
 
-
+//CATEGORY-CONTROL STATEMENTS
 // 18. Write a JavaScript program to check a pair of numbers and return true if one of the numbers
 // is 50 or if their sum is 50.
 
@@ -326,7 +342,7 @@ console.log(test50(20, 20));
 console.log(test50(30, 20));
 console.log(test50(50, 20));
 
-
+//CATEGORY-CONTROL STATEMENTS
 // 19. Write a JavaScript program to check whether a given integer is within 20 of 100 or 400.
 // function range(val) {
 //   return 200 - val < 20 || 400 - val < 20
@@ -341,7 +357,7 @@ console.log(range(209));
 console.log(range(409));
 console.log(range(-409));
 
-
+//CATEGORY-CONTROL STATEMENTS
 // 20. Write a JavaScript program to check two given integers whether one is positive and
 // another one is negative.
 function check(x, y) {
@@ -365,8 +381,7 @@ function addPy(str) {
 
 console.log(addPy("pertho"));
 
-*/
-
+//CATEGORY-STRING
 // 22. Write a JavaScript program to remove a character at the specified position in a
 //given string and return the modified string.
 //slice(include,exclude)
@@ -387,6 +402,7 @@ removelett("Hello", 2);
 removelett("browser", 4);
 
 //
+//CATEGORY-STRING
 // 23. Write a JavaScript program to create a new string
 // from a given string by changing the position of the first and last characters.
 // The string length must be broader than or equal to 1.
@@ -404,3 +420,28 @@ function replace(str) {
 replace("a");
 replace("ab");
 replace("abc");
+
+
+//CATEGORY-STRING
+//24. Write a JavaScript program to create another string from a given string
+//with the first character of the given string added to the front and back.
+
+function stringManipulate(str) {
+  console.log(str[0] + str + str[0]);
+  console.log(str.slice(0, 1) + str + str[0]);
+  console.log(str.substring(0, 1) + str.substring() + str.substring(0, 1));
+  //reduce repeatativity
+  const firstEle = str[0];
+  console.log(firstEle + str + firstEle);
+  //new way
+  console.log(str.charAt(0) + str + str.charAt(0));
+  //ternary operator
+  console.log(`${str[0]}${str}${str[0]}`);
+}
+stringManipulate("hello");
+
+*/
+//25. Write a JavaScript program to
+//check whether a given positive number is a multiple of 3 or 7.
+
+function findMultiple(num) {}

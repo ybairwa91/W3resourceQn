@@ -510,5 +510,257 @@ function rangeOfNum(x, y) {
 
 console.log(rangeOfNum(500, 109));
 
-*/
 
+//
+// 29. Write a JavaScript program to check whether three given integer values are in the
+// range 50..99 (inclusive). Return true if one or more of them are in the specified range.
+//ye dekh bro is bolte hai hoisting jaha declaration se phle hi call krdiya bros
+console.log(range_three(90));
+function range_three(x, y, z) {
+  return (x >= 50 && x < 100) || (y >= 50 && y < 100) || (z <= 50 && z < 100);
+}
+
+//30. Write a JavaScript program to check whether a string "Script" appears at the
+//5th (index 4) position in a given string. If "Script" appears in the string,
+//return the string without "Script" otherwise return the original one.
+// if (str.split(" ")[4] === "Script") {
+//   const resultHalf = str.split(" ").slice(0, 4).join(" ");
+//   const resultFull = str.split(" ").slice(5).join(" ");
+//   console.log(resultHalf + " " + resultFull);
+// } else {
+//   console.log(str);
+// }
+const checkScript = function (str) {
+  return str.split(" ")[4] === "Script"
+    ? str.split(" ").slice(0, 4).join(" ") +
+        " " +
+        str.split(" ").slice(5).join(" ")
+    : str;
+};
+console.log(checkScript("hi i am Yogesh doesnot make sense"));
+console.log(checkScript("this is programming java Script learning"));
+//another ways
+
+function removeScript(str) {
+  console.log(str.search("Script") == );
+  // if (str.search("Script") == 4) {
+  //   return str.replce("Script", " ");
+  // } else {
+  //   return str;
+  // }
+}
+// console.log(removeScript("this is programming java Script learning"));
+removeScript("this is programming java Script learning");
+// console.log(removeScript("hi i am Yogesh doesnot make sense"));
+removeScript("hi i am Yogesh doesnot make sense");
+
+/*
+//31. Write a JavaScript program to find the largest of three given integers.
+
+// one method
+function largest(x, y, z) {
+  if (x > y) {
+    if (x > z) {
+      return x;
+    } else {
+      return z;
+    }
+  } else {
+    if (y > z) {
+      return y;
+    } else {
+      return z;
+    }
+  }
+}
+console.log(largest(-10, -20, -30));
+
+//second method
+function largestOfAll(x, y, z) {
+  return Math.max(x, y, z);
+}
+console.log(largestOfAll(10, 20, 30));
+console.log(largestOfAll(-10, -20, -30));
+
+//third way
+function largestAmong(x, y, z) {
+  if (x > y && x > z) {
+    return x;
+  }
+  if (y > x && y > z) {
+    return y;
+  }
+  if (z > x && z > y) {
+    return z;
+  }
+}
+console.log(largestAmong(10, 20, 30));
+
+//fourth way
+// using sort
+function largestUsingSort(...values) {
+  const sort = values.sort()[0];
+  console.log(sort);
+  return sort[sort.length - 1];
+}
+
+console.log(largestUsingSort([10, 20, 30]));
+
+
+//32. Write a JavaScript program
+//to find the closest value to 100 from two numerical values.
+//Math.abs always return a positive value
+
+function closestVal(x, y) {
+  if (x != y) {
+    if (Math.abs(x - 100) > Math.abs(y - 100)) {
+      return "y";
+    } else return "x";
+  } else return "both are equal";
+}
+const result = closestVal(-120, 120);
+console.log(result);
+
+
+//33. Write a JavaScript program to
+//check whether two numbers are in the range 40..60 or 70..100 inclusive.
+
+//here in return statement issue is with is that if first if is true then
+//it will return immediately and never execute the second if
+//soln is to use console
+// function inRange(x, y) {
+  //   if ((x >= 40 && x <= 60) || (x >= 70 && x <= 100)) {
+//     return `x is in range `;
+//   }
+//   if ((y >= 40 && y <= 60) || (y >= 70 && y <= 100)) {
+  //     return `y is in range `;
+  //   }
+  // }
+  //////////
+  function inRange(x, y) {
+    if ((x >= 40 && x <= 60) || (x >= 70 && x <= 100)) {
+      console.log(`x is in range `);
+    } else {
+      console.log("x is not in range");
+    }
+    if ((y >= 40 && y <= 60) || (y >= 70 && y <= 100)) {
+      console.log(`y is in range `);
+    } else {
+      console.log("y is not in range");
+    }
+}
+inRange(0, 0);
+
+////////////////////////
+// 34. Write a JavaScript program to find the largest number from
+// the two given positive integers.
+//The two numbers are in the range 40..60 inclusive.
+
+function largestFromRange(x, y) {
+  if (
+    Math.abs(x) >= 40 &&
+    Math.abs(x) <= 60 &&
+    Math.abs(y) >= 40 &&
+    Math.abs(y) <= 60
+    ) {
+      if (x > y) {
+        return `x is bigger`;
+      } else if (x === y) {
+        return "both are equal";
+      } else return `y is bigger`;
+    } else return "not in range";
+  }
+  
+  //more simpler way
+  function test(x,y) {
+    return Math.abs(x) >= 40 &&
+    Math.abs(x) <= 60 &&
+    Math.abs(y) >= 40 &&
+    Math.abs(y) <= 60
+    ? x > y
+      ? x
+      : y
+      : false;
+    }
+    //another way
+    
+    function largestInRange(x,y) {
+      return Math.abs(x) >= 40 &&
+      Math.abs(x) <= 60 &&
+      Math.abs(y) >= 40 &&
+      Math.abs(y) <= 60
+      ? Math.max(x, y)
+      : `Numbers doesnot fit in the range`;
+    }
+    
+    console.log(largestFromRange(52, 52));
+    console.log(test(52, 52));
+    console.log(largestInRange(52, 52));
+    
+    
+    // 35. Write a program to
+    //check whether a specified character exists
+    // between the 2nd and 4th positions in a given string.[means at 3]
+    //lets start from 0 index
+    
+    function specifiedChar(str, char) {
+  let ctr = 0;
+  
+  for (let i = 0; i < str.length; i++) {
+    if (str.charAt(i) === char && i >= 1 && i <= 3) {
+      ctr = 1;
+      break;
+    }
+  }
+  return ctr === 1;
+}
+
+console.log(specifiedChar("hello", "l"));
+console.log(specifiedChar("hello", "e"));
+console.log(specifiedChar("helzo", "z"));
+
+function charTwoFour(word, char) {
+  return word.slice(2, 5).includes(char);
+}
+
+console.log(charTwoFour("java", "a"));
+
+
+// 36. Write a JavaScript
+//  program that checks whether the last digit of three
+// positive integers is the same.
+
+function sameInt(x, y, z) {
+  return (
+    String(x).slice(-1) == String(y).slice(-1) &&
+    String(x).slice(-1) == String(z).slice(-1) &&
+    String(z).slice(-1) == String(y).slice(-1)
+    );
+  }
+  console.log(sameInt(3943000, 93230, 2390));
+  console.log(sameInt(3943000, 9323, 2390));
+  console.log(sameInt(3943000, 93230, 239));
+console.log(sameInt(3943, 93230, 2390));
+
+//37 Write a JavaScript program to produce a new string that has the
+// first 3 characters in lower case from a given string.
+// If the string length is less than 3 convert all the
+//characters to upper case.
+
+function gameOfString(str) {
+  if (str.length < 3) {
+    console.log(str.toLocaleUpperCase());
+  } else {
+    console.log(str.slice(0, 3).toLocaleLowerCase() + str.slice(3));
+  }
+}
+gameOfString("JAXScript");
+
+*/
+//38. Write a JavaScript program to check a student's total marks 
+//in various examinations. The student will get A+ grade 
+//if the total marks are in the range 89..100 inclusive,
+// if the examination is "Final-exam" the student will receive
+// A+ grade and total marks must be greater than or equal to 90. 
+//If the student gets an A+ grade, return true, otherwise return false.  
+// Click me to see the solution

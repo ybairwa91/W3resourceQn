@@ -1,3 +1,7 @@
+//here are leaning from thiz quiz
+// substring(include,include),no negative arguments
+//slice(include,exclude) take negative arguments
+
 /*
 CATEGORY-MATH(DATE) OBEJCT
 //1. Write a JavaScript program to display the current day
@@ -440,8 +444,71 @@ function stringManipulate(str) {
 }
 stringManipulate("hello");
 
-*/
+CATEGORY-CONTROL STATEMENT
 //25. Write a JavaScript program to
 //check whether a given positive number is a multiple of 3 or 7.
 
-function findMultiple(num) {}
+function findMultiple(num) {
+  return num > 0 && (num % 3 === 0 || num % 7 === 0);
+}
+console.log(findMultiple(20));
+console.log(findMultiple(9));
+
+//26. Write a JavaScript program to create a string from a given string.
+// This is done by taking the last 3 characters and adding them at both the front and back.
+// The string length must be 3 or more.
+
+function frontBack(str) {
+  if (str.length < 4) return;
+  const lastThree = str.slice(-3);
+  console.log(lastThree + str + lastThree);
+  //substring doesnot take negative parameters
+  const backEle = str.substring(str.length - 3);
+  console.log(backEle + str + backEle);
+  //another way
+  console.log(`${str.slice(-3)}${str}${str.slice(-3)}`);
+}
+frontBack("abcd");
+
+
+//CATEGORY-CONTROL STATEMENTS
+// 27. Write a JavaScript program to
+// check whether a string starts with 'Java' if it does not otherwise.
+
+function java(str) {
+  if (str < 4) return;
+  console.log(str.startsWith("java") ? "Yes" : "no");
+  const words = str.substring(0, 4);
+  console.log(words);
+  if (words == "java") console.log("yes its start with java");
+  else console.log("no");
+}
+
+java("javascript");
+java("gaint");
+
+//CATEGORY-CONTROL STATEMENTS
+// 28. Write a JavaScript program to check whether two given integer values are in the
+// range 50..99 (inclusive). Return true if either of them falls within the range.
+
+function range(x, y) {
+  return (x > 49 && x < 100) || (y > 49 && y < 100);
+}
+console.log(range(54, 90));
+console.log(range(50, 99));
+console.log(range(99, 78));
+console.log(range(100, 39));
+console.log(range(49, 50));
+
+//using loops
+
+function rangeOfNum(x, y) {
+  for (let i = 50; i < 100; i++) {
+    return x === i || y === i;
+  }
+}
+
+console.log(rangeOfNum(500, 109));
+
+*/
+

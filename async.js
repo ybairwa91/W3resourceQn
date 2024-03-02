@@ -108,8 +108,135 @@ make_Get_Request("https://restcountries.com/v2/name/usa")
     console.log("Error", error.message);
   });
   
-  */
-
-// 4. Write a JavaScript function that takes an array of URLs
+  
+  // 4. Write a JavaScript function that takes an array of URLs
 //  and downloads the contents of each URL in parallel
 // using Promises.
+
+const promiseOne = fetch(`https://restcountries.com/v2/name/usa`).then((res) =>
+  res.json()
+);
+const promiseTwo = fetch(`https://restcountries.com/v2/name/canada`).then(
+  (res) => res.json()
+  );
+  const promiseThree = fetch(`https://restcountries.com/v2/name/uk`).then((res) =>
+  res.json()
+);
+
+Promise.all([promiseOne, promiseTwo, promiseThree])
+.then((res) => {
+    console.log(res);
+    return res.map((ele) => ele[0]);
+  })
+  .then((data) => {
+    [dataOne, dataTwo, dataThree] = data;
+    console.log(dataOne, dataTwo, dataThree);
+  });
+
+  //
+  function downloadContents(urls) {
+  const promises = urls.map((url) => {
+    return new Promise((resolve, reject) => {
+      fetch(url)
+        .then((res) => {
+          if (!res.ok) throw new Error(`HTTP error! Status:${response.status}`);
+          return res.text();
+        })
+        .then((data) => resolve(data))
+        .catch((err) => reject(err));
+      });
+    });
+    return Promise.all(promises);
+  }
+const urls = [
+  "https://jsonplaceholder.typicode.com/posts/1",
+  "https://jsonplaceholder.typicode.com/posts/2",
+  "https://jsonplaceholder.typicode.com/posts/3",
+];
+
+downloadContents(urls).then((data) => console.log(data));
+
+function parallelPromises(urls) {
+  const promises = urls.map((url) => {
+    return new Promise((resolve, reject) => {
+      fetch(url)
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP error! Status:${response.status}`);
+        return res.json();
+      })
+        .then((data) => resolve(data))
+        .catch((err) => reject(err));
+      });
+    });
+    return Promise.all(promises);
+  }
+const urls = [
+  "https://restcountries.com/v2/name/usa",
+  "https://restcountries.com/v2/name/portugal",
+  "https://restcountries.com/v2/name/canada",
+];
+// console.log(parallelPromises(urls));
+parallelPromises(urls).then((res) => console.log(res));
+
+*/
+
+// 5. Write a JavaScript program that implements a function
+// that performs a series of
+// asynchronous operations in sequence using Promises and
+//  'async/await'.
+
+const awaitAndAsync = async function () {
+  fetch(`https://restcountries.com/v2/name/usa`)
+    .then((res) => {
+      console.log(res);
+      return res.json();
+    })
+    .then((data) => console.log(data));
+  //
+  const res = await fetch(`https://restcountries.com/v2/name/usa`);
+  console.log(res);
+  const data = await res.json();
+  console.log(data);
+};
+awaitAndAsync();
+
+//series of operations
+function asyncOperations1() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log(`Async open1`);
+      resolve();
+    }, 1000);
+  });
+}
+
+function asyncOperations2() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log(`Async open2`);
+      resolve();
+    }, 2000);
+  });
+}
+
+function asyncOperations3() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log(`Async open3`);
+      resolve();
+    }, 3000);
+  });
+}
+
+async function performOperations() {
+  try {
+    await asyncOperations1();
+    await asyncOperations2();
+    await asyncOperations3();
+    console.log(`All operations completed`);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+performOperations();

@@ -756,11 +756,108 @@ function gameOfString(str) {
 }
 gameOfString("JAXScript");
 
-*/
-//38. Write a JavaScript program to check a student's total marks 
-//in various examinations. The student will get A+ grade 
+//38. Write a JavaScript program to check a student's total marks
+//in various examinations. The student will get A+ grade
 //if the total marks are in the range 89..100 inclusive,
 // if the examination is "Final-exam" the student will receive
-// A+ grade and total marks must be greater than or equal to 90. 
-//If the student gets an A+ grade, return true, otherwise return false.  
-// Click me to see the solution
+// A+ grade and total marks must be greater than or equal to 90.
+//If the student gets an A+ grade, return true, otherwise return false.
+
+function studentMarks(marks) {
+  let exam;
+  if (marks >= 89 && marks <= 100) {
+    exam == "other exam";
+    return `true`;
+  } else if (marks >= 90) {
+    exam = "final exam";
+    return `true`;
+  } else {
+    return `false`;
+  }
+}
+console.log(studentMarks(1));
+
+// 39. Write a JavaScript program to compute the sum of the two given integers.
+// If the sum is in the range 50..80 return 65 otherwise return 80.
+
+function sumRange(x = 0, y = 0) {
+  let sum = x + y;
+  // if (sum > 50 && sum < 80) return 65;
+  // else return 80;
+  
+  return sum > 50 && sum < 80 ? 65 : 80;
+}
+
+console.log(sumRange(10, 50));
+
+// 40. Write a JavaScript program to check from two given
+//integers whether one of them is 8 or their sum or difference is 8.
+
+function checkCond(x, y) {
+  return x === 8 || y === 8 || x + y === 8 || Math.abs(x - y) === 8;
+}
+console.log(checkCond(10, 2));
+console.log(checkCond(10, 12));
+
+// 41. Write a JavaScript program to check a set of three numbers;
+// if the three numbers are the same return 30;
+// otherwise return 20; and if two numbers are the same return 40.
+
+function repeat(x, y, z) {
+  if (x == y && y == z) return 30;
+  if (x == y || y == z || z == x) return 40;
+  return 20;
+}
+function repeatUsingCond(x, y, z) {
+  return x == y && y == z ? 30 : x == y || y == z || z == x ? 40 : 20;
+}
+
+console.log(repeat(104, 1032, 1024));
+console.log(repeatUsingCond(104, 1032, 1024));
+
+// 42. Write a JavaScript program to check whether three given numbers are
+//increasing in strict or in soft mode.
+// Note: Strict mode -> 10, 15, 31 : Soft mode -> 24, 22, 31 or 22, 22, 31
+
+function mode(x, y, z) {
+  if (y > x && z > y) return `Three numbers are in strict mode`;
+  else if (z > y) return `Soft mode`;
+  else return `undefined`;
+}
+
+console.log(mode(10, 15, 20));
+
+
+// 43. Write a JavaScript program to check from three given
+//numbers (non negative integers) that two or all of them have the
+//same rightmost digit.
+
+function rightMost(x, y, z) {
+  const xRightMost = String(x).slice(-1);
+  const yRightMost = String(y).slice(-1);
+  const zRightMost = String(z).slice(-1);
+  if (xRightMost === yRightMost) return true;
+  if (xRightMost === yRightMost && yRightMost === zRightMost) return true;
+  else return false;
+}
+console.log(rightMost(1038, 1237, 1458));
+
+function rightMost(x, y, z) {
+  const xRightMost = x.toString().slice(-1);
+  console.log(xRightMost);
+  const yRightMost = String(y).slice(-1);
+  const zRightMost = String(z).slice(-1);
+  
+  if (xRightMost === yRightMost) return true;
+  if (xRightMost === yRightMost && yRightMost === zRightMost) return true;
+  else return false;
+}
+console.log(rightMost(1038, 1238, 1458));
+
+*/
+// 44. Write a JavaScript program to check from three given
+// integers whether a number is greater than or equal to 20.
+// It is less than the others.
+
+function greaterThan20(x, y, z) {}
+console.log(greaterThan20(10, 100, 120));

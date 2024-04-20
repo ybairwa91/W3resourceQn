@@ -670,7 +670,7 @@ function largestFromRange(x, y) {
       } else return `y is bigger`;
     } else return "not in range";
   }
-  
+
   //more simpler way
   function test(x,y) {
     return Math.abs(x) >= 40 &&
@@ -683,7 +683,7 @@ function largestFromRange(x, y) {
       : false;
     }
     //another way
-    
+
     function largestInRange(x,y) {
       return Math.abs(x) >= 40 &&
       Math.abs(x) <= 60 &&
@@ -692,20 +692,20 @@ function largestFromRange(x, y) {
       ? Math.max(x, y)
       : `Numbers doesnot fit in the range`;
     }
-    
+
     console.log(largestFromRange(52, 52));
     console.log(test(52, 52));
     console.log(largestInRange(52, 52));
-    
-    
+
+
     // 35. Write a program to
     //check whether a specified character exists
     // between the 2nd and 4th positions in a given string.[means at 3]
     //lets start from 0 index
-    
+
     function specifiedChar(str, char) {
   let ctr = 0;
-  
+
   for (let i = 0; i < str.length; i++) {
     if (str.charAt(i) === char && i >= 1 && i <= 3) {
       ctr = 1;
@@ -784,7 +784,7 @@ function sumRange(x = 0, y = 0) {
   let sum = x + y;
   // if (sum > 50 && sum < 80) return 65;
   // else return 80;
-  
+
   return sum > 50 && sum < 80 ? 65 : 80;
 }
 
@@ -847,17 +847,521 @@ function rightMost(x, y, z) {
   console.log(xRightMost);
   const yRightMost = String(y).slice(-1);
   const zRightMost = String(z).slice(-1);
-  
+
   if (xRightMost === yRightMost) return true;
   if (xRightMost === yRightMost && yRightMost === zRightMost) return true;
   else return false;
 }
 console.log(rightMost(1038, 1238, 1458));
 
-*/
 // 44. Write a JavaScript program to check from three given
 // integers whether a number is greater than or equal to 20.
-// It is less than the others.
+// and find the least on who is less than 20
 
-function greaterThan20(x, y, z) {}
+const arr = [];
+function greaterThan20(x, y, z) {
+  if (x > 20) arr.push(x);
+  if (y > 20) arr.push(y);
+  if (z > 20) arr.push(z);
+  const max = Math.min(...arr);
+  return max;
+}
 console.log(greaterThan20(10, 100, 120));
+
+//44.A) Write a JavaScript program to check from three given integers
+// whether a number is greater than or equal to 20. It is less
+//than the others.[check a number is greater than 20 and if it is then
+//check whether they are less than other values]
+
+function lessthan20__Others() {
+  return (
+    (x >= 20 && (x < y || x < z)) ||
+    (y >= 20 && (y < x || y < z)) ||
+    (z >= 20 && (z < y || z < x))
+  );
+}
+
+
+// 45. Write a JavaScript program that checks two integer values and
+// returns true if either one is 15 or if their sum or difference is 15.
+function check15(x, y) {
+  return x === 15 || y === 15 || x + y === 15 || Math.abs(x - y) === 15;
+}
+console.log(check15(10, 15));
+console.log(check15(10, 5));
+console.log(check15(50, 35));
+console.log(check15(35, 50));
+console.log(check15(35, 5));
+
+//46. Write a JavaScript program to check two given
+//non-negative integers if one (not both) is a multiple of 7 or 11;
+
+function checkMultiple(x, y) {
+  if (x % 7 === 0 && y % 7 === 0) return false;
+  if (x % 11 === 0 && y % 11 === 0) return false;
+  if (x % 11 === 0 && y % 7 === 0) return false;
+  if (x % 7 === 0 && y % 11 === 0) return false;
+
+  if (x % 7 === 0 || y % 7 === 0) return true;
+  if (x % 11 === 0 || y % 11 === 0) return true;
+}
+console.log(checkMultiple(49, 14));
+
+//47. Write a JavaScript program to check whether a given number exists
+//in the range 40..10000.;For example 40 presents in 40 and 4000
+
+function checkRange(x) {
+  return x >= 40 && x <= 10000;
+}
+console.log(checkRange(50));
+console.log(checkRange(39));
+console.log(checkRange(10000));
+console.log(checkRange(10001));
+
+// 48. Write a JavaScript program to reverse a given string.
+
+let word = [];
+function reverseStr(str) {
+  for (let i = str.length - 1; i >= 0; i--) {
+    word.push(str[i]);
+  }
+  return word.join('')
+}
+console.log(reverseStr('hello'));
+// console.log()
+
+// 48. Write a JavaScript program to reverse a given string.
+function reverseStr(str) {
+  return str.split('').reverse().join("")
+}
+console.log(reverseStr('hello'));
+
+
+
+function reverseStr(str) {
+  let result = ''
+  for (let i = str.length - 1; i >= 0; i--) {
+    result = result + str[i]
+  }
+  return result;
+}
+console.log(reverseStr('hello'));
+
+
+const reverseStr = (str) => {
+  let newStr = '';
+  for (let i = str.length - 1; i >= 0; i--) {
+    newStr += str[i];
+  }
+  return newStr;
+}
+console.log(reverseStr('hello'))
+
+// let strReverse = (str, rStr = '', val = str.length - 1) => {
+  //   if (val < 0) return str;
+  //   rStr += str[val]
+  //   return strReverse(str, rStr, val - 1)
+  // }
+  // console.log(strReverse('javascript'));
+
+
+
+  // 49. Write a JavaScript program to replace every character
+  //in a given string with the character following it in the alphabets of english
+  //{if a then replace it with b}
+// }
+
+// console.log(String.fromCharCode(1));
+// String.fromCharCode(i) gives us the required alphabets
+//for small alphabets use i from 97-122
+//for big one use i from 65 to 90
+let newStr = ''
+function followingStr(str) {
+  for (let i = 0; i < str.length; i++) {
+    for (let j = 65; j < 122; j++) {
+      if (String.fromCharCode(j) === str[i]) {
+        newStr += String.fromCharCode(j + 1);
+      }
+    }
+  }
+  return newStr
+}
+console.log(followingStr('hello'));
+let newStr = ''
+function followingStr(str) {
+  for (let i = 0; i < str.length; i++) {
+    newStr += String.fromCharCode(str.charCodeAt(i) + 1);
+  }
+  return newStr
+}
+console.log(followingStr('hello'));
+*/
+
+// 50. Write a JavaScript
+// program to capitalize the first letter of each word in a
+//given string.
+
+/*
+function firstCapitalise(str) {
+  return [...str].slice(0, 1).join('').toUpperCase() +
+    [...str].slice(1).join('');
+}
+
+console.log(firstCapitalise('hello '));
+console.log(firstCapitalise('Brother'));
+
+////
+//lets do for sentences
+
+function firstCapitaliseOfSentence(str) {
+  return str.split(' ').map(ele => ele[0].toUpperCase() + ele.slice(1))
+}
+console.log(firstCapitaliseOfSentence('the quick brown fox'));
+
+//51. Write a JavaScript program
+// to convert a given number into hours and minutes.
+
+const input = 65;
+
+const hoursIs = String(Math.floor(input / 60)).padStart(2, '0')
+const minutesIs = String(input % 60).padStart(2, '0')
+
+console.log(`${hoursIs} hour:${minutesIs} minute`);
+
+
+// 52. Write a JavaScript
+// program to convert letters of a given string alphabetically.
+
+
+// console.log(String.fromCharCode(65));
+// console.log(String.fromCharCode(90));
+
+console.log('AB'.charCodeAt(1))
+console.log(String.fromCharCode(97));
+console.log(String.fromCharCode(122));
+
+function convertAlphabetically(str) {
+  let arr = [];
+  let arr2 = []
+  for (let i = 0; i < str.length; i++) {
+    const value = str[i].charCodeAt();
+    arr.push(value)
+    const alphaOrder = String.fromCharCode(value);
+    arr2.push(alphaOrder)
+  }
+  return arr2.sort().join('');
+}
+console.log(convertAlphabetically('BHAIRCHARA'));
+console.log(convertAlphabetically('HELlo'));
+
+function convertAlphabetically(str) {
+  return str.toLowerCase().split('').sort().join()
+}
+console.log(convertAlphabetically('Hello'));
+
+/////////////
+// 53. Write a JavaScript program to check whether the characters
+//  a and b are separated by exactly 3 places anywhere(at least once)
+// in a given string.
+
+function exact3space(str) {
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === 'a') {
+      if (str[i + 4] === 'b') {
+        console.log('hey its perfect string for this question')
+      }
+      else {
+        console.log('this is not what u want');
+      }
+    }
+  }
+}
+// exact3space('apsb')
+exact3space('chainsbreak')
+// exact3space('apqrb')
+// exact3space('apqrc');
+
+
+// 54. Write a JavaScript program to count the number of
+// vowels in a given string.
+
+function vowelsInString(str) {
+  let count = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === 'a' || str[i] === 'A') count++;
+    if (str[i] === 'e' || str[i] === 'E') count++;
+    if (str[i] === 'i' || str[i] === 'I') count++;
+    if (str[i] === 'o' || str[i] === 'O') count++;
+    if (str[i] === 'u' || str[i] === 'U') count++;
+
+  }
+  return count;
+}
+console.log(vowelsInString('aeiou'))
+console.log(vowelsInString('yksah'))
+
+///another way
+// Define a function named vowel_Count with parameter str
+function vowel_Count(str) {
+  // Use regular expression
+  //to replace all characters not in 'aeiou' with an empty string
+  // and get the length
+  // of the resulting string, which is the count of vowels
+
+  In the str.replace() method, the first argument is a regular expression (or a string) representing the pattern to search for in the string str. In the code provided, the regular expression /[^aeiou]/g is used as the first argument.
+
+  Breaking down this regular expression:
+
+[]: Denotes a character class, which matches any single
+ character within the brackets.
+^: Inside a character class, it negates the matching,
+meaning it matches any character not specified.
+aeiou: Matches any lowercase vowel character ('a', 'e', 'i', 'o', 'u').
+/g: Global flag, which indicates that the replacement
+should be applied globally (i.e., all matches in the string should be replaced, not just the first one).
+// So, in summary, the regular expression /[^aeiou]/g
+// matches any character that is not a lowercase vowel.
+//These characters are then replaced with an empty string,
+// effectively removing them from the original string.
+return str.replace(/[^aeiou]/g, "").length;
+}
+
+// Log the result of calling vowel_Count with the given strings to the console
+console.log(vowel_Count("Python"));
+console.log(vowel_Count("w3resource.com"));
+
+
+
+
+
+function vowel_Count(str) {
+  var c = str.match(/[aeiou]/gi);
+
+  return c.length;
+
+}
+
+console.log(vowel_Count("Python"));
+console.log(vowel_Count("w3resource.com"));
+// 55. Write a JavaScript program to
+// check whether a given string contains an equal number
+// of p's and t's.
+
+// lets solve this question by creating a constructor function and adjoin a method
+// in it
+
+function Constructor(str) {
+  this.str = str;
+
+  this.checkStr = function (str) {
+    let count1 = 0;
+    let count2 = 0;
+    for (let i = 0; i < str.length; i++) {
+      if (str[i] == 'p') count1++;
+      if (str[i] == 't') count2++;
+    }
+    return count1 === 0 && count2 === 0 ?
+      "No p's and t's are in letter" :
+      count1 === count2
+  }
+
+}
+const anObj = new Constructor('Hello');
+console.log(anObj);
+console.log(anObj.checkStr('hey'));
+
+
+
+console.log(anObj.checkStr('punishment'))
+console.log(anObj.checkStr('hriday'))
+console.log(anObj.checkStr('Purshuttam'))
+console.log(anObj.checkStr('Purshutpam'))
+console.log(anObj.checkStr('paatpss'))
+
+//////////////
+// SOLVE THIS SAME QUESTION USING REPLACE METHOD ON A STRING
+
+const str = 'letter';
+
+//replace first encountered letter 't'
+console.log(str.replace('t', ""));
+
+
+//replace all encountered letters 't'
+console.log(str.replaceAll(/[t]/g, ""));
+
+// Both task using regular expression
+console.log(str.replace(/[t]/, ""));
+console.log(str.replace(/[t]/g, ""));
+
+
+//replace all except 't' with ""
+console.log(str.replace(/[^t]/g, ""));
+
+
+
+// Define a function named equal_pt with parameter str
+function equal_pt(str) {
+  // Replace all characters except 'p' with an empty string and store the result in str_p
+  var str_p = str.replace(/[^p]/g, "");
+
+  // Replace all characters except 't' with an empty string and store the result in str_t
+  var str_t = str.replace(/[^t]/g, "");
+
+  // Get the length of str_p and store it in p_num
+  var p_num = str_p.length;
+
+  // Get the length of str_t and store it in s_num
+  var s_num = str_t.length;
+
+  // Return true if the lengths of str_p and str_t are equal; otherwise, return false
+  return p_num === s_num;
+}
+
+// Log the result of calling equal_pt with the given strings to the console
+console.log(equal_pt("paatpss"));
+console.log(equal_pt("paatps"));
+
+
+//56. Write a JavaScript program to divide two positive numbers
+// and return the result as string with properly formatted commas.
+
+//understand one method
+//toLocalString()
+
+//1.Date Object
+const date = new Date();
+console.log(date.toLocaleString());
+console.log(date.toLocaleString('en-US', { timeZone: 'UTC' }));
+console.log(date.toLocaleString('Ind'));
+
+//2.Number Object
+const number = 12354.43;
+console.log(number.toLocaleString());
+console.log(number.toLocaleString('en-US'));
+console.log(number.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' }));
+console.log(number.toLocaleString('Ind', { style: 'currency', currency: 'RUP' }));
+
+//3.Array Object
+const arr = [123, 456, 789]
+console.log(arr.toLocaleString());
+
+//4.
+
+function Constructor() {
+
+  this.properStr = function (divident, diviser) {
+
+    const result = (divident / diviser).toLocaleString('en-US', { maximumFractionDigits: 2 })
+    return result;
+  }
+}
+
+const anObj = new Constructor();
+
+console.log(anObj.properStr(200000, 0.1));
+
+*/
+
+///////////////////////////////////
+
+/*
+// 57. Write a JavaScript program to create one
+// string of specified copies(positive numbers) of a given string.
+
+function copyStrings(str, rep) {
+  return str.repeat(rep)
+}
+
+console.log(copyStrings('Hello this is Yogesh ', 5));
+
+
+function copyStr(str, rep) {
+  for (let i = 0; i < rep; i++) {
+    console.log(str)
+  }
+}
+
+console.log(copyStr('Hello from the outside', 5));
+
+
+
+const copyString = (str, num) => {
+  return (num > 0) ? str.repeat(num) : false
+}
+
+*/
+////////////////////////////////////////////////////////////////
+
+/*
+// 58. Write a JavaScript program to create an updated string of 4 copies
+// of the last 3 characters of a given original string.The string length must be 3 and above.  
+
+
+function newStr(str) {
+  if (str.length < 3) return 'Str should be more than 3 letters'
+  return str.slice(-3).repeat(4)
+}
+
+console.log(newStr('hello\n'));
+
+*/
+
+/////////////////////////////////////////////////////////////////////
+
+/*
+// 59. Write a JavaScript program to extract the first half of a even string.
+
+// 1) USING slice
+// function firstHalf(str) {
+//   return str.length % 2 === 0
+//     ? str.slice(str.length / 2)
+//     : "String length is not even";
+// }
+
+// console.log(firstHalf("hello"));
+
+
+// 2) using substring
+
+function firstHalf(str) {
+  return str.length % 2 === 0
+    ? str.substring(str.length / 2)
+    : "String length is not even";
+}
+
+console.log(firstHalf("helloo"));
+
+
+
+
+*/
+
+/////////////////////////////////////////////////////////////////////
+
+/*
+
+// slice(includes,notIncludes)
+
+// 60. Write a JavaScript program to create a new string without the first and last characters of a given string.  
+
+function questionSixT(str){
+ return str.slice(1,-1)
+}
+
+console.log(questionSixT('hello'))
+console.log(questionSixT('brother'))
+
+
+
+*/
+
+/////////////////////////////////////////////////////////////////////
+
+// 61. Write a JavaScript program to concatenate two strings except for their first character.
+
+function concatenate(strOne, strTwo) {
+  return strOne.slice(1) + strTwo.slice(1);
+}
+
+console.log(concatenate("One", "Two"));

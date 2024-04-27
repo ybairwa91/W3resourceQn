@@ -1356,12 +1356,72 @@ console.log(questionSixT('brother'))
 
 */
 
+/*
 /////////////////////////////////////////////////////////////////////
 
 // 61. Write a JavaScript program to concatenate two strings except for their first character.
 
+// function concatenate(strOne, strTwo) {
+//   return strOne.slice(1) + strTwo.slice(1);
+// }
+
+// console.log(concatenate("One", "Two"));
+
+// function concatenate(strOne, strTwo) {
+//   return strOne.slice(1).concat(strTwo.slice(1));
+// }
+
+// console.log(concatenate("One", "Two"));
+
+// function concatenate(strOne, strTwo) {
+//   return [...strOne.slice(1), ...strTwo.slice(1)].join('')
+// }
+
+// console.log(concatenate("One", "Two"));
+
+// function concatenate(strOne, strTwo) {
+//   return strOne.substring(1) + strTwo.substring(1);
+// }
+
+// console.log(concatenate("One", "Two"));
+
+
+
+
 function concatenate(strOne, strTwo) {
-  return strOne.slice(1) + strTwo.slice(1);
+  return strOne.substring(1,strOne.length).concat(strTwo.substring(1,strTwo.length));
 }
 
 console.log(concatenate("One", "Two"));
+
+*/
+
+/////////////////////////////////////////////////////////////////////
+
+/*
+
+// 62. Write a JavaScript program to move the last three characters to the start of a given string.
+// The string length must be greater than or equal to three.
+
+function questionSixT2(str) {
+  return str.length >= 3 ? str.slice(-3).concat(str.slice(0,-3)) : "String length is lesser than 3";
+}
+
+console.log(questionSixT2("brother"));
+console.log(questionSixT2("brot"));
+
+
+*/
+
+/////////////////////////////////////////////////////////////////////
+
+// 63. Write a JavaScript program to create a string using the middle three characters of a given string of odd length.
+// The string length must be greater than or equal to three.
+
+function questionSixT3(str) {
+  if (!(str.length % 2 === 0)) {
+    return "hi";
+  }
+}
+
+console.log(questionSixT3("abcdefg"));
